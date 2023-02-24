@@ -1,57 +1,29 @@
-﻿class Counter
-{
-    private const int min = -99;
-    private const int max = 99;
+﻿using lab1;
 
-    private int count;
-    public int Count
-    {
-        get { return count; }
-        set {
-            // ternary operator - fast solution
-            // count = value >= min && value <= max ? value : 0;
+// initialize and show
+Counter newCounter = new Counter();
+Console.WriteLine(newCounter.Count);
 
-            // better solution
-            if (count < min) { count = min; }
-            else if (count > max) { count = max; }
-            else { count = value; }
-        }
-    }
+// increase by amount and show
+newCounter.countManagement(5);
+Console.WriteLine(newCounter.Count);
 
-    public Counter() {
-        count = 0;
-    }
+// increase by 1 and show
+newCounter.increase();
+Console.WriteLine(newCounter.Count);
 
-    /// <summary>
-    /// Increases the counter by a predetermined amount
-    /// </summary>
-    /// <param name="amount"></param>
-    public void increaseAmount(int amount)
-    {
-        Count += amount;
-    }
+// decrease by amount and show
+newCounter.countManagement(-3);
+Console.WriteLine(newCounter.Count);
 
-    /// <summary>
-    /// Decreases the counter by a predetermined amount
-    /// </summary>
-    /// <param name="amount"></param>
-    public void decreaseAmount(int amount)
-    {
-        Count -= amount;
-    }
+// decrease by 1 and show
+newCounter.decrease();
+Console.WriteLine(newCounter.Count);
 
-    /// <summary>
-    /// Increases counter by 1 
-    /// </summary>
-    public void increase() {
-        Count++;
-    }
+// trying to set to high value
+newCounter.countManagement(100); // 99 is max limit
+Console.WriteLine(newCounter.Count);
 
-    /// <summary>
-    /// Decreases counter by 1 
-    /// </summary>
-    public void decrease()
-    {
-        Count--;
-    }
-}
+// trying to set to low value
+newCounter.countManagement(-200); // -99 is min limit
+Console.WriteLine(newCounter.Count);
