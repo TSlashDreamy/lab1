@@ -21,8 +21,8 @@ namespace lab1
                 // count = value >= min && value <= max ? value : 0;
 
                 // better solution
-                if (count < min) { count = min; }
-                else if (count > max) { count = max; }
+                if (value < min || count < min) { count = min; }
+                else if (value > max || count > max) { count = max; }
                 else { count = value; }
             }
         }
@@ -38,6 +38,11 @@ namespace lab1
         /// <param name="amount"></param>
         public void increaseAmount(int amount)
         {
+            if (amount < 0)
+            {
+                Console.WriteLine("Only positive numbers!");
+                return;
+            }
             Count += amount;
         }
 
@@ -47,6 +52,11 @@ namespace lab1
         /// <param name="amount"></param>
         public void decreaseAmount(int amount)
         {
+            if (amount < 0)
+            {
+                Console.WriteLine("Only positive numbers!");
+                return;
+            }
             Count -= amount;
         }
 
