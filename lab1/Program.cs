@@ -20,10 +20,10 @@ Console.WriteLine(newCounter.Count);
 newCounter.decrease();
 Console.WriteLine(newCounter.Count);
 
-// trying to set to high value
+// trying to set to high value (throws exception)
 newCounter.countManagement(100); // 99 is max limit
 Console.WriteLine(newCounter.Count);
 
-// trying to set to low value
+// trying to set to low value (throws exception)
 newCounter.countManagement(-200); // -99 is min limit
 Console.WriteLine(newCounter.Count);
