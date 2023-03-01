@@ -21,8 +21,8 @@ namespace lab1
                 // count = value >= min && value <= max ? value : 0;
 
                 // better solution
-                if (value < min || count < min) { count = min; }
-                else if (value > max || count > max) { count = max; }
+                if (value < min || count < min) { throw new Exception($"Value '{value}' is too low"); }
+                else if (value > max || count > max) { throw new Exception($"Value '{value}' is too high"); }
                 else { count = value; }
             }
         }
